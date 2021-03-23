@@ -3,6 +3,7 @@ import requests
 
 #ask for user input
 short_link = input("Please enter shared video url : ")
+cookie_input = input("Cookies? s_v_web_id : (enter for none) ")
 
 #Unshorten the link
 r = requests.get(short_link, allow_redirects=False)
@@ -13,12 +14,13 @@ m = re.search('&user_id=(\d+)', long_link, re.IGNORECASE)
 uid = m.group(1)
 
 uid_link = ("https://tiktok.com/@" + uid)
-
 print("Grabbing user info.... Please wait")
+print(uid_link)
 
 #Get User Info ( Username, name, following, followers, likes, description )
 from bs4 import BeautifulSoup
-r2 = requests.get(uid_link)
+cookies = dict(s_v_web_id="'" + cookie_input + "'")
+r2 = requests.get(uid_link, cookies=cookies)
 soup = BeautifulSoup(r2.content, 'html.parser')
 username = soup.find_all("h2", class_="jsx-2997938848 share-title")[0].text
 name = soup.find_all("h1", class_="share-sub-title")[0].text
