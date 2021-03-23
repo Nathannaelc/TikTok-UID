@@ -21,6 +21,8 @@ This script can help you to discover alt accounts.
 23/3 Grabbing user info via beautifulsoup
 
 # How to run
+[![Run on Repl.it](https://repl.it/badge/github/Nathannaelc/TikTok-UID)](https://repl.it/github/Nathannaelc/TikTok-UID)
+
 1. Clone to the repo ```git clone https://github.com/Nathannaelc/TikTok-UID/ ```
 2. Change directory to TikTok-UID ```cd TikTok-UID```
 3. Run the script

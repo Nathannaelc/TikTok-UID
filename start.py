@@ -15,7 +15,6 @@ uid = m.group(1)
 
 uid_link = ("https://tiktok.com/@" + uid)
 print("Grabbing user info.... Please wait")
-print(uid_link)
 
 #Get User Info ( Username, name, following, followers, likes, description )
 from bs4 import BeautifulSoup
